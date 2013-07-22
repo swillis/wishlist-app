@@ -1,0 +1,60 @@
+   <div>
+
+        <a href="#close" title="Close" class="close">X</a>
+        <ul>
+          <%= form_for(wish,:html => {:multipart => true}) do |f| %>
+          <li><label class="inline" for="title">Title:</label></li>
+          <li class="field">
+            <%=f.text_field :title , :class => "required xwide text input", :minlength=> '2', :placeholder=>"What are you trying to achieve?"%>  
+          </li>
+           <label class="inline" for="description">Description:</label>
+          <li class="field">
+            <%=f.text_area :description , :class => "required xwide text input", :minlength=> '10',:placeholder=>"Describe your goal.", :style=>"height: 120px;"%>
+           
+          </li>
+       
+            <%if !wish.image.nil?%>
+                <%=image_tag wish.image, :width => '120px'%>
+            <%else%>
+                <%=image_tag 'default_item.png', :width => '120px'%>
+            <%end%>
+       
+         
+         <div><%= f.label :image%><br />
+            <%= f.file_field :image  %></br></br>
+          </div> 
+         
+         
+          <li class="field">
+            <label class="inline">Status:</label>
+   
+              <%= f.radio_button :status ,  'inprogress' ,:checked =>true,:id => 'radio1'%>           
+              In Progress
+            
+            
+            
+              <%= f.radio_button :status ,  'completed' ,:id => 'radio2'%>
+              Completed
+            
+            
+          </li>
+          <li class="field">
+            <label>Estimated completion date:</label>
+            <ul class="date">
+            
+            <%=  f.date_select(:close_date, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' })%>
+          
+            </ul>
+          </li>
+          <li>
+            <div class="medium primary btn">
+              <%= f.submit "Submit" %>
+            </div>
+          </li>
+               <% end %>
+        </ul>
+      </div>
+    
+  
+
+

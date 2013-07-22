@@ -1,0 +1,54 @@
+
+    <div>
+      <a href="#close" title="Close" class="close">X</a>
+      
+      <h2>Add item to your Accomplist</h2>
+    
+      <%= form_for(Item.new,:method => :post,:url =>items_path(:id => @wish.id), :html => {:multipart => true}) do |form| %>
+        <ul>
+          <li><label class="inline" for="title">Title:</label></li>
+          <li class="field">
+            <%=form.text_field :title , :class =>  'required xwide text input' ,:minlength=> '2', :placeholder => "Title"%>
+            
+          </li>
+          
+           <li><label class="inline" for="url">Add URL:</label></li>
+          <li class="field">
+            <%=form.text_field :url , :class =>  'required url xwide text input' , :placeholder => "URL"%>
+            
+          </li>
+          
+          <li><label class="inline" for="price">Price:</label></li>
+          <li class="field">
+            <%=form.text_field :price , :class =>  'required number xwide text input' , :placeholder => "Price"%>
+            
+          </li>
+          
+          <li class="field">
+            <label>Currency:</label>
+                        
+              <% status = [['$', '$'], ['£', '£']]%>
+             <%= form.select :currency_type, status %>
+           
+          </li>
+        
+          
+              
+       
+         
+          <li class="field">
+            <div><%= form.label :image %><br />
+              <%= form.file_field :image %></br></br>
+            </div>
+            
+          </li>
+          <li>
+            <div class="medium primary btn">
+            <%= form.submit "Submit" %>
+          </div>
+          </li>
+        </ul>
+      <%end%>
+      
+    </div>
+  

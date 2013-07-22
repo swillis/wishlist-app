@@ -1,0 +1,40 @@
+
+
+    
+    <div>
+      
+        <a href="#close" title="Close" class="close">X</a>
+        <%= form_for(@wish, :url=> post_message_wish_path(@wish), :method=>"post") do |f|%>
+        <ul>
+          <div>
+            <%-if(!user_signed_in?) %>
+          <li><label class="inline">Email Address:</label></li>
+          <li class="field">
+            
+            <input type="text" name="email"  class="required xwide text input" placeholder="Email">
+          </li>
+          <%end%>
+          </div>
+           <label class="inline">Message to Recipient:</label>
+          
+           
+            
+           <textarea rows = "10" cols = "47" name = "message" style= "border: 1px solid #d8d8d8";>
+
+            </textarea>
+          
+           
+         
+                  
+          <li>
+            <input type="submit" value="Send">
+            
+          </li>
+          
+        </ul>
+    <%end%>
+    
+      </div>
+    
+  
+     

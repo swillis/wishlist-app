@@ -1,0 +1,105 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put ,:multipart => true}) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <label class="inline">First Name:</label>  
+    <ul>
+        <li class="field">
+              <%=f.text_field :first_name , :class =>  'required wide text input' , :autofocus => true , :placeholder => "First name"%>
+              
+        </li>
+    </ul>
+    
+    <label class="inline">Last Name:</label>  
+    <ul>
+        <li class="field">
+                <%=f.text_field :last_name , :class =>  'required wide text input' ,:placeholder => "Last name"%>
+              
+        </li>
+    </ul>
+   
+    <label class="inline">Email:</label>  
+    <ul>
+      <li class="field">
+              <%=f.email_field :email , :class =>  'required wide text input' ,:placeholder => "Email"%>
+            
+      </li>
+  </ul>
+  
+   <label class="inline">Bio:</label>
+   <ul>
+          <li class="field">
+            <%=f.text_area :bio , :class => "required xwide text input",:style=>"height: 120px; width: 432px;"%>
+           
+          </li>
+    </ul>
+  
+ 
+  <label class="inline">Gender:</label>
+    <ul>
+      <li class="field">
+              
+      
+                 <%= f.radio_button :gender ,  'male' ,:checked =>true,:id => 'radio1'%>           
+                 Male
+               
+               
+               
+                 <%= f.radio_button :gender ,  'female' ,:id => 'radio2'%>
+                 Female
+               
+               
+      </li>
+    </ul>
+    
+  <% if !@user.profile_image_url %>
+      <%= image_tag "default_profile.png" %>
+      <% else %>
+      <%= image_tag @user.profile_image_url(:thumb) ,:width => '120px'%>
+    <%end%>
+  <div><%= f.label :profile_image %>:<br/>
+  <%= f.file_field :profile_image %></br></br>
+  </div>
+
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+  
+  
+  <label class="inline">Password (leave blank if you don't want to change it)</label> 
+    <ul>
+          <li class="field">
+                  <%=f.password_field :password , :class =>  'required wide text input' ,:placeholder => "Password"%>
+                
+          </li>
+      </ul>
+
+    <label class="inline">Confirm Password:</label>  
+      <ul>
+           <li class="field">
+                   <%=f.password_field :password_confirmation , :class =>  'required wide text input' ,:placeholder => "Confirm Password"%>
+                 
+           </li>
+       </ul>
+
+
+    
+   <ul>
+          <li>
+            <div class="medium primary btn">
+              <%= f.submit "Update" %>
+            </div>
+          </li>
+    </ul>
+ 
+  
+
+  
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+

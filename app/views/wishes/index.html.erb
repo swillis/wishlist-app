@@ -1,0 +1,81 @@
+
+
+<div class="row">
+    <div class="four columns push_one image photo" style="width: 200px;height: 170px;margin-left: 0px;">
+    <% if !@user.profile_image_url %>
+      <%= image_tag "default_profile.png" %>
+      <% else %>
+      <%= image_tag @user.profile_image_url(:thumb) ,:style => 'width:250px; height:160px'%>
+    <%end%>
+     
+    </div>
+    <div class="six columns">
+      <h2><%= "#{@user.first_name}  #{@user.last_name}"%></h2>
+      <p><%= @user.bio %></p>
+      <ul class="inline">
+      <div style="display: none;">  
+        <a href="#"><img src="/assets/rss.png" height="11" width="11"/>&nbsp;
+           Subscribe
+        </a> 
+      
+        <li><a href="#"><i class="icon-mail"></i>Request address</a></li>
+        </div>
+        <li><%= link_to "<i class='icon-tools' >&nbsp;&nbsp;Settings</i>".html_safe, edit_user_registration_path%>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <% if @inprogress_wishes.present? %>
+    <h3>Pending Accomplists</h3>
+    <div class="row">
+      <% @inprogress_wishes.each do |wish|%>
+        <div class="four columns alpha" style="margin-right: 13px;">
+        <a href="<%= wish_path(wish.friendly_id)%>">
+            <%if wish.image.present?%>
+                <%=image_tag wish.image,:style => 'width:140px; height:120px'%>
+            <%else%>
+                <%=image_tag 'default_item.png',:style => 'width:140px; height:120px'%>
+            <%end%>
+        </a>
+          <h4><%= wish.title%></h4>
+          <ul>
+            <li>Status: <span><%= wish.status%></span></li>
+            <li>End date: <span><%= wish.close_date.to_date%></span></li>
+        
+            <li>Rewards: <span><%=wish.items.count %></span> </li>
+          </ul>
+        </div>
+      <%end%>
+    </div>
+  <%end%>
+  
+  
+  <% if @completed_wishes.present? %>
+     <h3>Completed Accomplists</h3>
+    <div class="row">
+      <% @completed_wishes.each do |wish|%>
+        <div class="four columns alpha" style="margin-right: 13px;">
+           <a href="<%= wish_path(wish.friendly_id)%>">
+                <%if wish.image.present?%>
+                    <%=image_tag wish.image, :style => 'width:140px; height:120px'%>
+                <%else%>
+                    <%= image_tag "default_item.png", :style => 'width:140px; height:120px'%>
+                <%end%>
+             </a>
+          <h4><%=wish.title%></h4>
+          <ul>
+            <li>Status: <span><%=wish.status%></span></li>
+            <li>Accomplished: <span></span></li>
+            <li>Rewards: <span><%=wish.items.count %></span></li>
+          </ul>
+        </div>
+      <%end%>
+    </div>
+  <%end%>
+ 
+
+
+</div>
+  

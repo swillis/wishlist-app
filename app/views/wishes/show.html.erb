@@ -1,0 +1,125 @@
+  <div class='row'>
+    
+    <div class='seven columns'>
+      
+      <div>
+        
+       <ul class='inline'>
+        
+        <h3><%= @wish.title %>
+        <%-if(user_signed_in? && @wish.user.id == current_user.id) %>
+        <%=link_to "<i class='icon-cog'></i>".html_safe , edit_wish_path(@wish) %></h3>
+         <%end%>
+         </ul>
+        <ul class='inline'>
+          
+          <li><img src="/assets/clock.png" height="12" width="12"> </i>Status: <span><%= @wish.status%></span></li>
+          &nbsp;
+               
+          <li><img src="/assets/calendar.png" height="12" width="12"> </i>Completion date: <span><%= @wish.close_date.to_date%></span></li>
+         
+        </ul>
+        <p><%= @wish.description %></p>
+        
+        
+     
+      </div>
+      <% @wish.items.each do |item|%>
+        <div class='row'>
+          <div class='three columns'>
+            <% if item.image.present? %>
+              <%=link_to image_tag(item.image) ,"#{item.url}" , :target => "_blank"%>
+              
+            <% else %>
+              <%=link_to image_tag("/assets/default_item.png"), "#{item.url}" , :target => "_blank"%> 
+            <%end%>
+          </div>
+            
+          <div class='nine columns'>
+            <%-if(user_signed_in? && @wish.user.id == current_user.id) %>
+            <h4><%= item.title%><%= link_to "<i class='icon-cancel' ></i>".html_safe, item_path(item) , :method=>:delete, data: { confirm: 'Are you sure?' }%></h4>
+            <%end%>
+            <p>  <%=link_to item.url ,"#{item.url}" , :target => "_blank"%></p>
+           
+              <p><%= "#{item.currency_type}" " " "#{item.price}" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <a href="#email_sent" style ="padding-left: 100px"><img src="/assets/trophy.png" height="12" width="12"/>
+               Send this reward
+             </a>
+            </p>
+            
+               
+            
+          </div>
+        </div>
+      <%end%>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <div>
+          <%-if(user_signed_in? && @wish.user.id == current_user.id) %>
+          <h3><a href="#addItemModal"><i class='icon-plus'></i>Add Item</a></h3>
+          <%end%>
+        </div>
+        
+    </div>
+    
+    
+
+    <div class='four columns push_one'>
+      <div class='row'>
+        <%-if(user_signed_in? && @wish.user.id == current_user.id) %>
+        <h3>This is your list</h3>
+        <% else%>
+          <h3><%= "This is #{@wish.user.first_name}'s list"%></h3>
+          <%end%>
+        <div class='four columns'><%= image_tag @wish.user.profile_image_url(:thumb)%></div>
+        <div class='six columns'>
+          <p><%= "#{@wish.user.first_name}" " " "#{@wish.user.last_name}"%></p>
+        </div>
+      </div><br>
+      <div class='row'>
+        
+        <div class='eight columns'><%= @wish.user.bio %></div>
+      </div><br>
+    <div>
+      <%-if(user_signed_in? && @wish.user.id == current_user.id) %>
+        <a href="#addItemModal"><i class='icon-plus'></i>Add Item</a>
+    </div>
+     <%end%>
+      <div class='row'>
+         <%-if(user_signed_in? && @wish.user.id == current_user.id) %>
+        <h4>Share your list!</h4><br>
+        <% else %>
+          <h4>Share this list!</h4><br>
+          <%end%>
+        <div>
+          <ul class='inline'>
+            
+            
+            <li> <%= link_to image_tag("/assets/facebook.png"), "http://www.facebook.com/sharer.php?u=#{request.protocol}#{request.host_with_port}#{request.fullpath}", :target => "_blank" %></li>
+            &nbsp;&nbsp;
+            <li> <%= link_to image_tag("/assets/twitter.png"), "https://twitter.com/share?url=#{request.protocol}#{request.host_with_port}#{request.fullpath}", :target => "_blank"%></li>
+            &nbsp;&nbsp;
+            <li> <%= link_to image_tag("/assets/linkedin.png"), "http://www.linkedin.com/shareArticle?mini=true&;url=#{request.protocol}#{request.host_with_port}#{request.fullpath}", :target => "_blank"%></li>
+            &nbsp;&nbsp;
+            <li> <%= link_to image_tag("/assets/google+.png"),"https://plusone.google.com/_/+1/confirm?hl=en&url=#{request.protocol}#{request.host_with_port}#{request.fullpath}", :target => "_blank"%></li>
+          </ul>
+        </div> 
+        
+        
+        
+        
+      </div>
+
+    </div>
+    
+    
+   <div id="email_sent" class="modalDialog">
+   <%= render 'home/email_sent'%>
+  </div>
+ 
+    
+    
+    
+  </div>
+  <div id="addItemModal" class="modalDialog">
+   <%= render 'items/form'%>
+  </div>

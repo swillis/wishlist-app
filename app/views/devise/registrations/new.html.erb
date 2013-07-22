@@ -1,0 +1,53 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource,:validate => true, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <p id="notice" class="notice" ><%= devise_error_messages! %></p>
+ 
+
+  <ul>
+      <li class="field">
+            <%=f.text_field :first_name , :class =>  'required wide text input' , :autofocus => true , :placeholder => "First name"%>
+            
+      </li>
+  </ul>
+  
+  <ul>
+      <li class="field">
+              <%=f.text_field :last_name , :class =>  'required wide text input' ,:placeholder => "Last name"%>
+            
+      </li>
+  </ul>
+  
+  <ul>
+      <li class="field">
+              <%=f.email_field :email , :class =>  'required wide text input' ,:placeholder => "Email"%>
+            
+      </li>
+  </ul>
+  
+  <ul>
+      <li class="field">
+              <%=f.password_field :password , :class =>  'required wide text input' ,:placeholder => "Password"%>
+            
+      </li>
+  </ul>
+   
+    <ul>
+      <li class="field">
+              <%=f.password_field :password_confirmation , :class =>  'required wide text input' ,:placeholder => "Confirm Password"%>
+            
+      </li>
+  </ul>
+    
+    <ul>
+          <li>
+            <div class="medium primary btn">
+              <%= f.submit "Submit" %>
+            </div>
+          </li>
+    </ul>
+
+  
+<% end %>
+
+<%= render "devise/shared/links" %>
