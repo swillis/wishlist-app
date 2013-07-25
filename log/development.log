@@ -97,3 +97,650 @@ ActiveRecord::StatementInvalid (Could not find table 'users'):
   Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
   Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
   Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-25 19:38:16 +0100
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-07-25 19:38:16 +0100
+Processing by Devise::SessionsController#new as HTML
+Completed 500 Internal Server Error in 12ms
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  activerecord (3.2.8) lib/active_record/connection_adapters/sqlite_adapter.rb:472:in `table_structure'
+  activerecord (3.2.8) lib/active_record/connection_adapters/sqlite_adapter.rb:346:in `columns'
+  activerecord (3.2.8) lib/active_record/connection_adapters/schema_cache.rb:12:in `block in initialize'
+  activerecord (3.2.8) lib/active_record/model_schema.rb:228:in `yield'
+  activerecord (3.2.8) lib/active_record/model_schema.rb:228:in `columns'
+  activerecord (3.2.8) lib/active_record/model_schema.rb:243:in `column_defaults'
+  activerecord (3.2.8) lib/active_record/base.rb:482:in `initialize'
+  devise (2.2.3) app/controllers/devise_controller.rb:102:in `new'
+  devise (2.2.3) app/controllers/devise_controller.rb:102:in `build_resource'
+  devise (2.2.3) app/controllers/devise/sessions_controller.rb:8:in `new'
+  actionpack (3.2.8) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.8) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.8) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:447:in `_run__4529062239301743621__process_action__1960769646317357340__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.8) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.8) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.8) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.8) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.8) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.8) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/mapper.rb:42:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__2466164016652127842__call__1959162815001724309__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.4ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20130419082612)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130419082612')
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateWishes (20130422125838)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "wishes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "status" varchar(255), "close_date" datetime, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("wishes")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_wishes_on_user_id" ON "wishes" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130422125838')
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20130422125934)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "detail" varchar(255), "wish_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130422125934')
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddFirstNameToUser (20130424073538)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "users" ADD "first_name" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "last_name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD "profile_image" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "bio" text
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130424073538')[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to AddDetailsToWish (20130424082033)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "wishes" ADD "goal" text
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "wishes" ADD "description" text[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "wishes" ADD "completion_date" date
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "wishes" ADD "public_url" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130424082033')
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddDetailsToItems (20130424094630)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "items" ADD "name" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "items" ADD "price" float
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130424094630')[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to AddRewardsToWish (20130425103745)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "wishes" ADD "rewards" integer
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130425103745')[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to AddGenderToUser (20130430113519)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "gender" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130430113519')[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to AddImageToUser (20130502061935)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "Avatar" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130502061935')[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to AddImageToWish (20130506075900)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "wishes" ADD "image" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130506075900')[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to AddUrlToItem (20130507094543)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "items" ADD "url" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130507094543')[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to AddImageToItem (20130507095340)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "items" ADD "image" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130507095340')[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to AddCurrencyToItem (20130513103240)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "items" ADD "currency_type" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130513103240')[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to AddSlugToWish (20130514055327)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "wishes" ADD "slug" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("wishes")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_wishes_on_user_id')
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_wishes_on_slug" ON "wishes" ("slug")[0m
+  [1m[35mWish Load (0.1ms)[0m  SELECT "wishes".* FROM "wishes" WHERE ("wishes"."id" >= 0) ORDER BY "wishes"."id" ASC LIMIT 1000
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130514055327')[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateFriendlyIdSlugs (20130514061011)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "friendly_id_slugs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar(255) NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(40), "created_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("friendly_id_slugs")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("friendly_id_slugs")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_friendly_id_slugs_on_sluggable_id')
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("friendly_id_slugs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_friendly_id_slugs_on_slug_and_sluggable_type')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_friendly_id_slugs_on_sluggable_id')
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130514061011')
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("friendly_id_slugs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_friendly_id_slugs_on_sluggable_type')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_friendly_id_slugs_on_slug_and_sluggable_type')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_friendly_id_slugs_on_sluggable_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("items")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("wishes")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_wishes_on_slug')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_wishes_on_user_id')
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-25 19:40:55 +0100
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-07-25 19:40:55 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.5ms)
+Compiled custom.css  (0ms)  (pid 75209)
+Compiled gumby.css  (0ms)  (pid 75209)
+Compiled home.css  (6ms)  (pid 75209)
+Compiled items.css  (1ms)  (pid 75209)
+Compiled registrations.css  (1ms)  (pid 75209)
+Compiled scaffolds.css  (9ms)  (pid 75209)
+Compiled wishes.css  (1ms)  (pid 75209)
+Compiled application.css  (90ms)  (pid 75209)
+Compiled jquery.js  (2ms)  (pid 75209)
+Compiled jquery_ujs.js  (0ms)  (pid 75209)
+Compiled gumby.js  (0ms)  (pid 75209)
+Compiled home.js  (93ms)  (pid 75209)
+Compiled items.js  (1ms)  (pid 75209)
+Compiled jquery.validate.js  (0ms)  (pid 75209)
+Compiled main.js  (0ms)  (pid 75209)
+Compiled modernizr-2.6.2.min.js  (0ms)  (pid 75209)
+Compiled plugins.js  (0ms)  (pid 75209)
+Compiled registrations.js  (0ms)  (pid 75209)
+Compiled wishes.js  (0ms)  (pid 75209)
+Compiled application.js  (201ms)  (pid 75209)
+  Rendered wishes/_form.html.erb (7.3ms)
+  Rendered layouts/_header.html.erb (71.3ms)
+Completed 200 OK in 486ms (Views: 456.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/gumby.css?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /gumby.css - 200 OK (5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /home.css - 200 OK (1ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /custom.css - 200 OK (2ms)
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /registrations.css - 200 OK (3ms)
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /items.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/wishes.css?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /wishes.css - 200 OK (2ms)
+
+
+Started GET "/assets/gumby.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /gumby.js - 200 OK (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /home.js - 200 OK (2ms)
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /items.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /jquery.validate.js - 200 OK (3ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /main.js - 200 OK (1ms)
+
+
+Started GET "/assets/modernizr-2.6.2.min.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /modernizr-2.6.2.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/plugins.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /plugins.js - 200 OK (3ms)
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /registrations.js - 200 OK (1ms)
+
+
+Started GET "/assets/wishes.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /wishes.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 19:40:56 +0100
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-07-25 19:41:07 +0100
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+  Rendered wishes/_form.html.erb (3.2ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-07-25 19:41:08 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+  Rendered wishes/_form.html.erb (3.2ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-07-25 19:41:23 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RcKdAa0KP9JWb0uUdg5w9/J78Y9CL9KNI49FjQsbW0U=", "user"=>{"email"=>"samueljohnwillis@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'samueljohnwillis@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 8ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RcKdAa0KP9JWb0uUdg5w9/J78Y9CL9KNI49FjQsbW0U=", "user"=>{"email"=>"samueljohnwillis@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Submit"}
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.2ms)
+  Rendered wishes/_form.html.erb (3.0ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+Completed 200 OK in 99ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-07-25 19:41:27 +0100
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.2ms)
+  Rendered wishes/_form.html.erb (3.2ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-07-25 19:41:54 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RcKdAa0KP9JWb0uUdg5w9/J78Y9CL9KNI49FjQsbW0U=", "user"=>{"first_name"=>"sam", "last_name"=>"willis", "email"=>"sam@sam.sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'sam@sam.sam' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+  Rendered wishes/_form.html.erb (3.0ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+Completed 200 OK in 119ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-07-25 19:42:03 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RcKdAa0KP9JWb0uUdg5w9/J78Y9CL9KNI49FjQsbW0U=", "user"=>{"first_name"=>"sam", "last_name"=>"willis", "email"=>"sam@sam.sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'sam@sam.sam' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "users" ("Avatar", "bio", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "gender", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Avatar", nil], ["bio", nil], ["created_at", Thu, 25 Jul 2013 18:42:03 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "sam@sam.sam"], ["encrypted_password", "$2a$10$NC3t2EGlJUqdcW0wlJYs/eSgWBwizlnU1MQ/0FLzn9XeCbMZ79mua"], ["first_name", "sam"], ["gender", nil], ["last_name", "willis"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 25 Jul 2013 18:42:03 UTC +00:00]]
+  Rendered user_mailer/welcome_email.html.erb (0.4ms)
+
+Sent mail to sam@sam.sam (3827ms)
+Date: Thu, 25 Jul 2013 19:42:03 +0100
+From: info@accomplist.com
+To: sam@sam.sam
+Message-ID: <51f1717bebf17_125c93fcbc5000ea8643cd@samp.local.mail>
+Subject: Welcome to Accomplist
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to accomplist.com sam</h1>
+    <p>
+      You have successfully signed up to .com,
+      your username is: sam@sam.sam.<br/>
+    </p>
+    
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-07-25 18:42:07.793622', "current_sign_in_at" = '2013-07-25 18:42:07.793622', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2013-07-25 18:42:07.794975' WHERE "users"."id" = 1
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3980ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-25 19:42:07 +0100
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/wishes
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/wishes" for 127.0.0.1 at 2013-07-25 19:42:07 +0100
+Processing by WishesController#index as HTML
+  [1m[36mWish Load (0.1ms)[0m  [1mSELECT "wishes".* FROM "wishes" [0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "wishes" WHERE "wishes"."user_id" = 1 AND "wishes"."status" = 'inprogress'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "wishes" WHERE "wishes"."user_id" = 1 AND "wishes"."status" = 'completed'
+  Rendered wishes/index.html.erb within layouts/application (3.0ms)
+  Rendered wishes/_form.html.erb (2.8ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+Completed 200 OK in 25ms (Views: 14.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/fonts/icons/entypo.woff" for 127.0.0.1 at 2013-07-25 19:42:08 +0100
+
+ActionController::RoutingError (No route matches [GET] "/fonts/icons/entypo.woff"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/fonts/icons/entypo.ttf" for 127.0.0.1 at 2013-07-25 19:42:08 +0100
+
+ActionController::RoutingError (No route matches [GET] "/fonts/icons/entypo.ttf"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started POST "/wishes" for 127.0.0.1 at 2013-07-25 19:43:15 +0100
+Processing by WishesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RcKdAa0KP9JWb0uUdg5w9/J78Y9CL9KNI49FjQsbW0U=", "wish"=>{"title"=>"this is a test", "description"=>"one day when i;m growed up i want to be an astrodiverpilot.", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f978ca8bb48 @original_filename="Screen Shot 2013-07-25 at 11.54.28.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"wish[image]\"; filename=\"Screen Shot 2013-07-25 at 11.54.28.png\"\r\nContent-Type: image/png\r\n", @tempfile=#<File:/var/folders/nw/kx1td8q10d7b37p4cxmfs2pr0000gq/T/RackMultipart20130725-75209-1o4nixz>>, "status"=>"inprogress", "close_date(1i)"=>"2013", "close_date(2i)"=>"10", "close_date(3i)"=>"1"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFriendlyId::Slug Load (1.1ms)[0m  [1mSELECT "friendly_id_slugs".* FROM "friendly_id_slugs" WHERE "friendly_id_slugs"."sluggable_type" = 'Wish' AND (slug = 'this-is-a-test' OR slug LIKE 'this-is-a-test--%') ORDER BY LENGTH(slug) DESC, slug DESC LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "wishes" ("close_date", "completion_date", "created_at", "description", "goal", "image", "public_url", "rewards", "slug", "status", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["close_date", Tue, 01 Oct 2013 00:00:00 UTC +00:00], ["completion_date", nil], ["created_at", Thu, 25 Jul 2013 18:43:15 UTC +00:00], ["description", "one day when i;m growed up i want to be an astrodiverpilot."], ["goal", nil], ["image", "Screen_Shot_2013-07-25_at_11.54.28.png"], ["public_url", nil], ["rewards", nil], ["slug", "this-is-a-test"], ["status", "inprogress"], ["title", "this is a test"], ["updated_at", Thu, 25 Jul 2013 18:43:15 UTC +00:00], ["user_id", 1]]
+  [1m[36mFriendlyId::Slug Load (0.1ms)[0m  [1mSELECT "friendly_id_slugs".* FROM "friendly_id_slugs" WHERE "friendly_id_slugs"."sluggable_id" = 1 AND "friendly_id_slugs"."sluggable_type" = 'Wish' ORDER BY "friendly_id_slugs".id DESC LIMIT 1[0m
+  [1m[35mFriendlyId::Slug Load (0.1ms)[0m  SELECT id FROM "friendly_id_slugs" WHERE "friendly_id_slugs"."sluggable_id" = 1 AND "friendly_id_slugs"."sluggable_type" = 'Wish' AND "friendly_id_slugs"."slug" = 'this-is-a-test' ORDER BY "friendly_id_slugs".id DESC
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "friendly_id_slugs" ("created_at", "slug", "sluggable_id", "sluggable_type") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 25 Jul 2013 18:43:15 UTC +00:00], ["slug", "this-is-a-test"], ["sluggable_id", 1], ["sluggable_type", "Wish"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/wishes/this-is-a-test
+Completed 302 Found in 211ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/wishes/this-is-a-test" for 127.0.0.1 at 2013-07-25 19:43:15 +0100
+Processing by WishesController#show as HTML
+  Parameters: {"id"=>"this-is-a-test"}
+  [1m[36mWish Load (0.2ms)[0m  [1mSELECT "wishes".* FROM "wishes" WHERE "wishes"."slug" = 'this-is-a-test' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."wish_id" = 1
+  Rendered home/_email_sent.html.erb (1.2ms)
+  Rendered items/_form.html.erb (12.1ms)
+  Rendered wishes/show.html.erb within layouts/application (31.0ms)
+  Rendered wishes/_form.html.erb (3.4ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/fonts/icons/entypo.woff" for 127.0.0.1 at 2013-07-25 19:43:15 +0100
+
+ActionController::RoutingError (No route matches [GET] "/fonts/icons/entypo.woff"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/fonts/icons/entypo.ttf" for 127.0.0.1 at 2013-07-25 19:43:15 +0100
+
+ActionController::RoutingError (No route matches [GET] "/fonts/icons/entypo.ttf"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/wishes" for 127.0.0.1 at 2013-07-25 19:43:28 +0100
+Processing by WishesController#index as HTML
+  [1m[36mWish Load (0.2ms)[0m  [1mSELECT "wishes".* FROM "wishes" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "wishes" WHERE "wishes"."user_id" = 1 AND "wishes"."status" = 'inprogress'[0m
+  [1m[35mWish Load (0.1ms)[0m  SELECT "wishes".* FROM "wishes" WHERE "wishes"."user_id" = 1 AND "wishes"."status" = 'inprogress'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."wish_id" = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "wishes" WHERE "wishes"."user_id" = 1 AND "wishes"."status" = 'completed'
+  Rendered wishes/index.html.erb within layouts/application (3.8ms)
+  Rendered wishes/_form.html.erb (2.8ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/fonts/icons/entypo.woff" for 127.0.0.1 at 2013-07-25 19:43:28 +0100
+
+ActionController::RoutingError (No route matches [GET] "/fonts/icons/entypo.woff"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/fonts/icons/entypo.ttf" for 127.0.0.1 at 2013-07-25 19:43:28 +0100
+
+ActionController::RoutingError (No route matches [GET] "/fonts/icons/entypo.ttf"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/swillis/.rbenv/versions/1.9.3-p194-perf/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
