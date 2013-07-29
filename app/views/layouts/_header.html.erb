@@ -1,45 +1,35 @@
-<div class="navbar" id="nav1">
-    
+<div class="header" id="nav1">
     
 <%if user_signed_in? %>
   
-    <div class='row'>
-      <h2 class="four columns logo"><%=link_to 'Accomplist' ,wishes_path%></h2>
-      <ul class="eight columns">
-        <li>
-          <%=link_to "My Accomplists", wishes_path%>
-        </li>
-        <li>
-          <a href="#newWishModal">Create Accomplist</a> 
-          
-        </li>
-        <li><a href="viewListLO.html">Extras</a></li>
-        <li>
-          <%=link_to "Log Out", destroy_user_session_path , :method => :delete %>
-          
-        </li>
-      </ul>
-    </div>
-  
-  
+  <h2 class="logo"><%=link_to 'Accomplist' ,wishes_path%></h2>
+
+</div>
+
     <%else%>
-      <div class="row">
-            <h2 class="six columns logo"><%=link_to 'Accomplist', home_index_path%></h2>
-            <ul class="six columns">
+    
+      <div class="">
+
+            <h2 class="logo"><%=link_to 'Accomplist', home_index_path%></h2>
+
+            <ul class="">
+
               <li>
-                
                 <%=link_to "Log in", new_user_session_path%>
-               
               </li> 
+
               <li>
                 <%=link_to "Sign up", new_user_registration_path%>
               </li>
+
             </ul>
+
       </div>
-    <%end%>
+
 </div>
-  
-  </div>
-  <div id="newWishModal" class="modalDialog">
+
+    <%end%>
+
+<div id="newWishModal" class="modalDialog">
    <%= render 'wishes/form' , :wish => Wish.new%>
-  </div>
+</div>

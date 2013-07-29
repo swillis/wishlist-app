@@ -1,1 +1,45 @@
-<div><p>what</p></div>
+<%if user_signed_in? %>
+
+<div class='sidebar'>
+
+	<div class="">
+    <div class="photo" style="width: 100%;height: 200px;margin-left: 0px;">
+    <% if !@user.profile_image_url %>
+      <%= image_tag "default_profile.png" %>
+      <% else %>
+      <%= image_tag @user.profile_image_url(:thumb) ,:style => 'width:100%; height:100%'%>
+    <%end%>
+    </div>
+    <div class="">
+      <h2><%= "#{@user.first_name}  #{@user.last_name}"%></h2>
+      <p><%= @user.bio %></p>
+      <ul class="">
+      <div style="display: none;">  
+        <a href="#"><img src="/assets/rss.png" height="11" width="11"/>&nbsp;
+           Subscribe
+        </a> 
+      
+        <li><a href="#"><i class="icon-mail"></i>Request address</a></li>
+        </div>
+        <li><%= link_to "<i class='icon-tools' >&nbsp;&nbsp;Settings</i>".html_safe, edit_user_registration_path%>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+	<ul class="">
+		<li>
+		  <%=link_to "My Accomplists", wishes_path%>
+		</li>
+		<li>
+		  <a href="#newWishModal">Create Accomplist</a>  
+		</li>
+		<li><a href="viewListLO.html">Extras</a></li>
+		<li>
+		  <%=link_to "Log Out", destroy_user_session_path , :method => :delete %>
+		</li>
+	</ul>
+</div>
+
+<%end%>
