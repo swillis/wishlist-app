@@ -2,6 +2,7 @@
 
 * {
   margin: 0;
+  font-family: open-sans;
 }
 
 body {
@@ -14,27 +15,27 @@ body {
 .header {
   height: 50px;
   padding: 0;
-  background-color: purple;
+  background-color: #58f5ad;
 }
 
 .main {
-  background-color: red;
+  background-color: #f9f6f1;
   height: 100%;
   margin-left: 240px;
 }
 
-.sidebar {
-  background-color: green;
-  width: 240px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 111;
-}
-
 .user-details {
   margin-top: 50px;
+  background-color: #f9f6f1;
+}
+
+.user-details .bio {
+  padding: 20px;
+}
+
+.user-details .bio h2 {
+  color: white;
+  font-weight: 300;
 }
 
 .image {

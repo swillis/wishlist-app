@@ -1,0 +1,17 @@
+.sidebar {
+  background-color: #30332f;
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 111;
+}
+
+.sidebar .photo {
+	border-bottom: 5px solid #58f5ad;
+}
+
+.sidebar .user-details {
+	background-color: #222322;
+}

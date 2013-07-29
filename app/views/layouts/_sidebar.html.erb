@@ -10,14 +10,12 @@
       <%= image_tag @user.profile_image_url(:thumb) ,:style => 'width:100%; height:100%'%>
     <%end%>
     </div>
-    <div class="">
+    <div class="bio">
       <h2><%= "#{@user.first_name}  #{@user.last_name}"%></h2>
       <p><%= @user.bio %></p>
       <ul class="">
       <div style="display: none;">  
-        <a href="#"><img src="/assets/rss.png" height="11" width="11"/>&nbsp;
-           Subscribe
-        </a> 
+        <a href="#"><img src="/assets/rss.png" height="11" width="11"/>Subscribe</a> 
       
         <li><a href="#"><i class="icon-mail"></i>Request address</a></li>
         </div>
