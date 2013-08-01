@@ -1,6 +1,7 @@
 <%if user_signed_in? %>
 
 <div class='sidebar'>
+  <div class='pre-nav'></div>
 
 	<div class="user-details">
     <div class="photo" style="width: 100%;height: 200px;margin-left: 0px;">
@@ -14,19 +15,18 @@
       <h2><%= "#{@user.first_name}  #{@user.last_name}"%></h2>
       <p><%= @user.bio %></p>
       <ul class="">
-      <div style="display: none;">  
-        <a href="#"><img src="/assets/rss.png" height="11" width="11"/>Subscribe</a> 
-      
-        <li><a href="#"><i class="icon-mail"></i>Request address</a></li>
+        <div style="display: none;">  
+          <a href="#"><img src="/assets/rss.png" height="11" width="11"/>Subscribe</a> 
+          <li><a href="#"><i class="icon-mail"></i>Request address</a></li>
         </div>
-        <li><%= link_to "<i class='icon-tools' >&nbsp;&nbsp;Settings</i>".html_safe, edit_user_registration_path%>
-        </li>
-        
+<!--         <li>
+          <%= link_to "<i class='icon-tools'>Settings</i>".html_safe, edit_user_registration_path%>
+        </li> -->
       </ul>
     </div>
   </div>
 
-	<ul class="">
+	<ul class="nav">
 		<li>
 		  <%=link_to "My Accomplists", wishes_path%>
 		</li>

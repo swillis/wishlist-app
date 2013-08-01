@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: #30332f;
+  background-color: #262b31;
   width: 240px;
   height: 100%;
   position: absolute;
@@ -8,10 +8,49 @@
   z-index: 111;
 }
 
+.sidebar .pre-nav {
+	height: 50px;
+	background-color: #41BECE;
+}
+
 .sidebar .photo {
-	border-bottom: 5px solid #58f5ad;
+	border-bottom: 5px solid #41BECE;
 }
 
 .sidebar .user-details {
-	background-color: #222322;
+	background-color: #262b31;
+}
+
+.sidebar .user-details {
+  /*margin-top: 50px;*/
+  background-color: #1a1f24;
+}
+
+.sidebar .user-details .bio {
+  padding: 20px;
+}
+
+.sidebar .user-details .bio h2 {
+  color: white;
+  font-weight: 300;
+}
+
+.sidebar .user-details .bio p {
+	color: #b8bbc0;
+	font-size: 14px;
+}
+
+ul.nav {
+	padding: 0;
+}
+
+ul.nav li {
+	list-style: none;
+	padding: 20px;
+}
+
+ul.nav li a {
+	color: #b8bbc0;
+	text-decoration: none;
+	width: 240px;
 }
