@@ -5,7 +5,9 @@
 
 	<div class="user-details">
     <div class="photo" style="width: 100%;height: 200px;margin-left: 0px;">
+
     <% if !@user.profile_image_url %>
+    
       <%= image_tag "default_profile.png" %>
       <% else %>
       <%= image_tag @user.profile_image_url(:thumb) ,:style => 'width:100%; height:100%'%>
@@ -28,12 +30,14 @@
 
 	<ul class="nav">
 		<li>
-		   <i class='icon-mail'></i> <%=link_to "My Accomplists", wishes_path%>
+		   <%=link_to "My Accomplists", wishes_path%>
 		</li>
 		<li>
 		  <a href="#newWishModal">Create Accomplist</a>  
 		</li>
-		<li><a href="viewListLO.html">Extras</a></li>
+		<li>
+      <a href="viewListLO.html">Extras</a>
+    </li>
 		<li>
 		  <%=link_to "Log Out", destroy_user_session_path , :method => :delete %>
 		</li>

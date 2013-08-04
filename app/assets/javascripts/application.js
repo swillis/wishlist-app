@@ -13,3 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function(){
+ $(window).scroll(function(){
+  var y = $(window).scrollTop();
+  if( y > 50){
+      $(".sidebar").addClass('shadow');
+  } else {
+      $(".sidebar").removeClass('shadow');
+  }
+ });
+})
