@@ -10,7 +10,12 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%=render 'layouts/sidebar'%>
+    <% if user_signed_in? %>
+      <%= render 'layouts/sidebar'%>
+    <% else %>
+
+    <% end %>
+
     <div class='main'>
       <%=render 'layouts/header'%>
       <div class='row'>
